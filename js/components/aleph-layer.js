@@ -42,7 +42,6 @@ Vue.component("aleph-layer", {
 <h3>Enhancers</h3>
 <div class="upgrades">
     <aleph-upgrade :upgrade="aleph.upgrades.deltaBoost"></aleph-upgrade>
-    <aleph-upgrade :upgrade="aleph.upgrades.etaBoost"></aleph-upgrade>
     <aleph-upgrade :upgrade="aleph.upgrades.alephBoost"></aleph-upgrade>
     <aleph-upgrade :upgrade="aleph.upgrades.powerGenerators"></aleph-upgrade>
     <aleph-upgrade :upgrade="aleph.upgrades.prestigeNoPowerBoost"></aleph-upgrade>
