@@ -14,10 +14,14 @@ class AlephLayer
             alephBoost: new AlephUpgrade("Gain more tasks based on the log(tasks) you have",
                 level => new Decimal(1e6).pow(Decimal.pow(1.5, level)),
                 level => new Decimal(1).add(Decimal.max(0, game.alephLayer.aleph).add(1).log10().mul(level).mul(0.05)).pow(2.5)),
-            deltaBoost: new AlephUpgrade("Gain more 🗡",
+            deltaBoost: new AlephUpgrade("Gain more delta",
                 level => Decimal.pow(1e5, level).mul(1e3),
-                level => Decimal.pow(10, level), {
-                    maxLevel: 4
+                level => Decimal.pow(1e3, level), {
+                    maxLevel: 1000
+            etaBoost: new AlephUpgrade("Gain more eta",
+                level => Decimal.pow(1e20, level).mul(1e3),
+                level => Decimal.pow(1e25, level), {
+                    maxLevel: 1000
                 }),
             powerGenerators: new AlephUpgrade("All Power Generators on every Layer are stronger",
                 level => Utils.createValueDilation(Decimal.pow(1e5, Decimal.pow(level, 1.5)).mul(1e20), 0.001),
